@@ -1,41 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Speech Recognition</title>
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-  <div class="container" >
-    <h2> Speech to Text Application</h2>
-    <hr>
-    <form action="." method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <br>
-      Choose a audiofile:
-      <input type="file" name="audio_file"><br><br>
-      <input type="submit" value="Submit">
-    </form><br><br>
-    {% if transcript %}
+{% extends 'base.html' %}
+{% block content %}
+<p>Select Voice Service?</p>
+<a href="/stream" style="color:green;">Streaming Service</a><br><br>
+<a href="/non-stream" style="color:green;">Non-Streaming Service</a>
 
-      <textarea rows="10" cols="100">
-        {{ transcript }}
-      </textarea>
-
-    {%elif message %}
-
-      <p>
-        Could not parse text from speech. Please try another audio file.
-      </p>
-
-    {% endif %}
-  <hr>
-  </div>
-<footer>
-  Developed by: Mohsin Mumtaz
-</footer>
-</body>
-</html>
+{% endblock %}

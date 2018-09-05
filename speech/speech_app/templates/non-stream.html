@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+    {% block back %}
+    <a href="/" style=" color:white">Home</a><br><br>
+     {% endblock %}
+{% block content %}
+<form action="/non-stream" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <br>
+  Choose a audiofile:
+  <input type="file" name="audio_file"><br><br>
+  <input type="submit" value="Submit">
+</form><br><br>
+{% if transcript %}
+
+  <textarea rows="10" cols="100">
+    {{ transcript }}
+  </textarea>
+
+{%elif message %}
+
+  <p>
+    Could not parse text from speech. Please try another audio file.
+  </p>
+
+{% endif %}
+{% endblock %}
+
