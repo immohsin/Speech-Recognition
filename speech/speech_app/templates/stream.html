@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+    {% block back %}
+    <a href="/" style=" color:white">Home</a><br><br>
+     {% endblock %}
+{% block content %}
+<div>
+    <button class="button" id="start">Stream Microphone</button><br></br><b></b>
+    <button id="stop" class="button">Stop Recording</button>
+    <div id="ans" style="fontSize:'40px', text-align:'center'"></div>
+</div>
+{% endblock %}

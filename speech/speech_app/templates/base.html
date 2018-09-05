@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Speech Recognition</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'bundle.js' %}"></script>
+</head>
+<body>
+  <div class="container" >
+    <h2> Speech to Text Application</h2>
+    {% block back %}
+     {% endblock %}
+    <hr>
+      <br><br>
+     {% block content %}
+     {% endblock %}
+    <br><br>
+     <hr>
+  </div>
+<footer>
+  Developed by: Mohsin Mumtaz
+</footer>
+</body>
+</html>
